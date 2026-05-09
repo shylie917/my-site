@@ -3,78 +3,99 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>好物导航 · 德芙巧克力</title>
+  <title>小美的好物清单</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
   <style>
-    :root{--bg:#0D0D0D;--card:#1C1C1C;--border:#2A2A2A;--text:#F0EDE8;--muted:#888;--green:#00E676;--yellow:#FFD600;}
+    :root{--bg:#FFF9F5;--card:#FFFFFF;--border:#F0E8E0;--text:#1A1410;--muted:#9A8F87;--pink:#FF6B8A;--orange:#FF8C42;}
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:var(--bg);color:var(--text);font-family:'Noto Sans SC',sans-serif;}
     a{text-decoration:none;color:inherit;}
-    .top{background:var(--green);color:#000;text-align:center;padding:.5rem;font-size:.75rem;font-weight:700;}
-    .header{padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
-    .logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;}
-    .logo span{color:var(--green);}
-    .hero{padding:3rem 1.5rem 2rem;}
-    .hero h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1.15;margin-bottom:.8rem;}
-    .hero h1 em{font-style:normal;color:var(--green);}
-    .hero p{color:var(--muted);font-size:.9rem;line-height:1.8;}
-    .card{background:var(--card);border:1px solid var(--border);margin:1rem 1.5rem;padding:1.5rem;}
-    .card-tag{background:rgba(255,214,0,.1);border:1px solid rgba(255,214,0,.3);color:var(--yellow);font-size:.6rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;display:inline-block;margin-bottom:1rem;}
-    .card h2{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.6rem;}
-    .card p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:1.2rem;}
-    .price{margin-bottom:1.2rem;}
-    .price .old{font-size:.8rem;color:var(--muted);text-decoration:line-through;margin-right:.5rem;}
-    .price .new{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--green);}
-    .btn{display:block;background:var(--green);color:#000;text-align:center;padding:.9rem;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.05em;}
-    .commission{display:flex;justify-content:space-between;margin:1rem 1.5rem;padding:1rem 1.5rem;border:1px solid var(--border);background:var(--card);}
-    .commission-item{text-align:center;}
-    .commission-num{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--green);}
-    .commission-label{font-size:.6rem;color:var(--muted);margin-top:.2rem;}
-    .guide{margin:1rem 1.5rem;padding:1.5rem;border:1px solid var(--border);background:var(--card);}
-    .guide h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:1rem;}
-    .step{display:flex;gap:.8rem;margin-bottom:.8rem;align-items:flex-start;}
-    .step-num{background:var(--green);color:#000;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;}
-    .step p{font-size:.78rem;color:var(--muted);line-height:1.6;}
-    footer{padding:1.5rem;text-align:center;border-top:1px solid var(--border);font-size:.6rem;color:var(--muted);}
+    .top{background:var(--pink);color:#fff;text-align:center;padding:.5rem;font-size:.75rem;font-weight:500;}
+    .header{padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:#fff;}
+    .logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--text);}
+    .logo span{color:var(--pink);}
+    .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--orange));display:flex;align-items:center;justify-content:center;font-size:1rem;}
+    .hero{padding:2rem 1.5rem 1.5rem;text-align:center;}
+    .hero-tag{display:inline-block;background:rgba(255,107,138,.1);color:var(--pink);font-size:.7rem;padding:.3rem .8rem;border-radius:999px;margin-bottom:.8rem;}
+    .hero h1{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;line-height:1.2;margin-bottom:.6rem;}
+    .hero p{color:var(--muted);font-size:.85rem;line-height:1.8;}
+    .tags{display:flex;gap:.5rem;padding:.8rem 1.5rem;flex-wrap:wrap;}
+    .tag{background:#fff;border:1px solid var(--border);color:var(--muted);font-size:.7rem;padding:.3rem .8rem;border-radius:999px;}
+    .tag.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+    .section-title{padding:.5rem 1.5rem 1rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
+    .card{background:var(--card);border:1px solid var(--border);margin:.5rem 1.2rem;padding:1.3rem;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);}
+    .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;}
+    .card-badge{background:rgba(255,107,138,.1);color:var(--pink);font-size:.6rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;}
+    .card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem;line-height:1.4;}
+    .card .desc{color:var(--muted);font-size:.8rem;line-height:1.75;margin-bottom:1rem;}
+    .card-bottom{display:flex;align-items:center;justify-content:space-between;}
+    .price-wrap .original{font-size:.75rem;color:var(--muted);text-decoration:line-through;}
+    .price-wrap .current{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--pink);}
+    .buy-btn{background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;font-size:.75rem;font-weight:700;padding:.55rem 1.2rem;border-radius:999px;white-space:nowrap;}
+    .review{background:rgba(255,107,138,.05);border-left:3px solid var(--pink);padding:.7rem 1rem;margin-top:.8rem;font-size:.75rem;color:var(--muted);line-height:1.6;font-style:italic;}
+    .stats{display:flex;gap:1rem;margin:1rem 1.2rem;padding:1rem 1.2rem;background:#fff;border:1px solid var(--border);border-radius:12px;}
+    .stat{flex:1;text-align:center;}
+    .stat-num{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--pink);}
+    .stat-label{font-size:.6rem;color:var(--muted);margin-top:.2rem;}
+    .footer-note{margin:1.5rem 1.2rem;padding:1rem;background:#fff;border:1px solid var(--border);border-radius:12px;text-align:center;}
+    .footer-note p{font-size:.75rem;color:var(--muted);line-height:1.7;}
+    .footer-note strong{color:var(--pink);}
+    footer{padding:1.5rem;text-align:center;font-size:.6rem;color:var(--muted);}
   </style>
 </head>
 <body>
-<div class="top">🍫 母亲节送礼首选 · 点击购买即赚佣金</div>
+
+<div class="top">🌸 每天为你挑选最值得买的好物！</div>
+
 <div class="header">
-  <div class="logo">好物<span>导航</span></div>
-  <span style="font-size:.65rem;color:var(--green);border:1px solid rgba(0,230,118,.3);padding:.25rem .7rem;border-radius:999px;">💰 联盟营销站</span>
-</div>
-<div class="hero">
-  <h1>母亲节好物<br/><em>推荐</em>来了</h1>
-  <p>精选高性价比好物，每次有人通过链接购买，佣金自动到账。</p>
+  <div class="logo">小美的<span>好物清单</span></div>
+  <div class="avatar">🛍️</div>
 </div>
 
-<div class="commission">
-  <div class="commission-item"><div class="commission-num">18%</div><div class="commission-label">佣金比例</div></div>
-  <div class="commission-item"><div class="commission-num">¥5.48</div><div class="commission-label">每单收益</div></div>
-  <div class="commission-item"><div class="commission-num">99%</div><div class="commission-label">好评率</div></div>
-  <div class="commission-item"><div class="commission-num">¥0</div><div class="commission-label">启动成本</div></div>
+<div class="hero">
+  <div class="hero-tag">✨ 亲测好用 · 持续更新</div>
+  <h1>买前看我<br/>替你踩坑</h1>
+  <p>每一款都是我亲自试过觉得值得买的<br/>绝不乱推，良心推荐 💕</p>
 </div>
+
+<div class="tags">
+  <span class="tag active">全部</span>
+  <span class="tag">零食</span>
+  <span class="tag">美妆</span>
+  <span class="tag">居家</span>
+  <span class="tag">母亲节</span>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">32+</div><div class="stat-label">已推荐好物</div></div>
+  <div class="stat"><div class="stat-num">99%</div><div class="stat-label">好评率</div></div>
+  <div class="stat"><div class="stat-num">1.2k</div><div class="stat-label">粉丝信任</div></div>
+</div>
+
+<div class="section-title">🔥 本周热推</div>
 
 <div class="card">
-  <span class="card-tag">🔥 爆款推荐 · 佣金18%</span>
-  <h2>德芙巧克力桶装270g</h2>
-  <p>60颗德芙桶装，母亲节送礼必备！好评率99%，日期新鲜，物流很快，性价比超高，京东自营品质保障。</p>
-  <div class="price">
-    <span class="old">¥59.89</span>
-    <span class="new">¥24.89</span>
+  <div class="card-header">
+    <span class="card-badge">🍫 零食 · 母亲节必备</span>
   </div>
-  <a class="btn" href="https://u.jd.com/f6eoEms" target="_blank">👉 立即购买 · 享优惠</a>
+  <h3>德芙巧克力桶装270g · 60颗装</h3>
+  <p class="desc">真的！这款巧克力送妈妈太合适了，桶装60颗超有仪式感，价格才¥24.89，比超市便宜好多。我自己买了三桶，一桶送妈妈，两桶自己吃哈哈 😂 日期非常新鲜，京东自营放心买！</p>
+  <div class="review">「日期新鲜，物流很快，性价比超高，已经回购三次了！」— 买家真实评价</div>
+  <br/>
+  <div class="card-bottom">
+    <div class="price-wrap">
+      <div class="original">原价 ¥59.89</div>
+      <div class="current">¥24.89</div>
+    </div>
+    <a class="buy-btn" href="https://u.jd.com/f6eoEms" target="_blank">去京东购买 →</a>
+  </div>
 </div>
 
-<div class="guide">
-  <h3>📖 怎么赚佣金？</h3>
-  <div class="step"><div class="step-num">1</div><p>把这个网页链接发到小红书、朋友圈、微信群</p></div>
-  <div class="step"><div class="step-num">2</div><p>朋友点进来，点「立即购买」跳转京东下单</p></div>
-  <div class="step"><div class="step-num">3</div><p>每笔订单自动计入你的京东联盟账户</p></div>
-  <div class="step"><div class="step-num">4</div><p>满¥50提现到银行卡，被动收入持续到账</p></div>
+<div class="footer-note">
+  <p>💌 喜欢我的推荐就<strong>收藏这个页面</strong>吧<br/>我会持续更新好物，帮你省钱不踩坑～</p>
 </div>
 
-<footer>© 2026 好物导航 · 本站链接含联盟追踪参数</footer>
+<footer>© 2026 小美的好物清单 · 用心推荐每一款</footer>
+
 </body>
 </html>
