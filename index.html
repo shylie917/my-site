@@ -3,102 +3,78 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>好物导航 · 精选推荐</title>
+  <title>好物导航 · 德芙巧克力</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --bg: #0D0D0D; --surface: #161616; --card: #1C1C1C;
-      --border: #2A2A2A; --text: #F0EDE8; --muted: #888;
-      --green: #00E676; --green-dim: rgba(0,230,118,.12);
-      --yellow: #FFD600; --red: #FF4D4D;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: 'Noto Sans SC', sans-serif; font-weight: 300; }
-    a { text-decoration: none; color: inherit; }
-    .topbar { background: var(--green); color: #000; text-align: center; padding: .55rem 1rem; font-size: .72rem; font-weight: 700; }
-    header { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: var(--bg); }
-    .logo { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; }
-    .logo span { color: var(--green); }
-    .badge { background: rgba(0,230,118,.12); border: 1px solid rgba(0,230,118,.3); color: var(--green); font-size: .65rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; }
-    .hero { padding: 4rem 2rem 3rem; max-width: 700px; }
-    .hero h1 { font-family: 'Syne', sans-serif; font-size: 2.6rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
-    .hero h1 em { font-style: normal; color: var(--green); }
-    .hero p { font-size: .95rem; color: var(--muted); line-height: 1.85; }
-    .stats { display: flex; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 0 2rem; flex-wrap: wrap; }
-    .stat { flex: 1; padding: 1.2rem 1.5rem; border-right: 1px solid var(--border); min-width: 100px; }
-    .stat:last-child { border-right: none; }
-    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--green); }
-    .stat-label { font-size: .65rem; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--border); margin: 2rem; border: 1px solid var(--border); }
-    .card { background: var(--card); padding: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; }
-    .card-icon { width: 44px; height: 44px; background: rgba(0,230,118,.12); border: 1px solid rgba(0,230,118,.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-    .card-commission { background: rgba(255,214,0,.1); border: 1px solid rgba(255,214,0,.25); color: var(--yellow); font-size: .6rem; font-weight: 700; padding: .25rem .65rem; border-radius: 999px; }
-    .card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
-    .card p { font-size: .8rem; color: var(--muted); line-height: 1.75; flex: 1; }
-    .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: .8rem; border-top: 1px solid var(--border); }
-    .card-platform { font-size: .6rem; color: var(--muted); }
-    .card-btn { background: var(--green); color: #000; font-size: .65rem; font-weight: 700; padding: .4rem 1rem; border-radius: 4px; }
-    .guide { margin: 0 2rem 2rem; border: 1px solid var(--border); background: var(--surface); padding: 2rem; }
-    .guide h2 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 2rem; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
-    .step { background: var(--card); border: 1px solid var(--border); padding: 1.2rem; }
-    .step-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--border); margin-bottom: .5rem; }
-    .step h4 { font-size: .85rem; font-weight: 700; margin-bottom: .4rem; }
-    .step p { font-size: .75rem; color: var(--muted); line-height: 1.7; }
-    footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    footer p { font-size: .65rem; color: var(--muted); }
-    @media(max-width:600px) { .hero { padding: 2.5rem 1.2rem 2rem; } .stats { margin: 0 1.2rem; } .grid { margin: 1.2rem; } .guide { margin: 0 1.2rem 1.2rem; } }
+    :root{--bg:#0D0D0D;--card:#1C1C1C;--border:#2A2A2A;--text:#F0EDE8;--muted:#888;--green:#00E676;--yellow:#FFD600;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Noto Sans SC',sans-serif;}
+    a{text-decoration:none;color:inherit;}
+    .top{background:var(--green);color:#000;text-align:center;padding:.5rem;font-size:.75rem;font-weight:700;}
+    .header{padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+    .logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;}
+    .logo span{color:var(--green);}
+    .hero{padding:3rem 1.5rem 2rem;}
+    .hero h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1.15;margin-bottom:.8rem;}
+    .hero h1 em{font-style:normal;color:var(--green);}
+    .hero p{color:var(--muted);font-size:.9rem;line-height:1.8;}
+    .card{background:var(--card);border:1px solid var(--border);margin:1rem 1.5rem;padding:1.5rem;}
+    .card-tag{background:rgba(255,214,0,.1);border:1px solid rgba(255,214,0,.3);color:var(--yellow);font-size:.6rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;display:inline-block;margin-bottom:1rem;}
+    .card h2{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.6rem;}
+    .card p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:1.2rem;}
+    .price{margin-bottom:1.2rem;}
+    .price .old{font-size:.8rem;color:var(--muted);text-decoration:line-through;margin-right:.5rem;}
+    .price .new{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--green);}
+    .btn{display:block;background:var(--green);color:#000;text-align:center;padding:.9rem;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.05em;}
+    .commission{display:flex;justify-content:space-between;margin:1rem 1.5rem;padding:1rem 1.5rem;border:1px solid var(--border);background:var(--card);}
+    .commission-item{text-align:center;}
+    .commission-num{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--green);}
+    .commission-label{font-size:.6rem;color:var(--muted);margin-top:.2rem;}
+    .guide{margin:1rem 1.5rem;padding:1.5rem;border:1px solid var(--border);background:var(--card);}
+    .guide h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:1rem;}
+    .step{display:flex;gap:.8rem;margin-bottom:.8rem;align-items:flex-start;}
+    .step-num{background:var(--green);color:#000;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;}
+    .step p{font-size:.78rem;color:var(--muted);line-height:1.6;}
+    footer{padding:1.5rem;text-align:center;border-top:1px solid var(--border);font-size:.6rem;color:var(--muted);}
   </style>
 </head>
 <body>
-<div class="topbar">🎯 每笔成功推荐，你都能赚取佣金 · 完全免费启动</div>
-<header>
+<div class="top">🍫 母亲节送礼首选 · 点击购买即赚佣金</div>
+<div class="header">
   <div class="logo">好物<span>导航</span></div>
-  <div class="badge">💰 联盟营销站</div>
-</header>
-<section class="hero">
-  <h1>发现好产品<br/><em>推荐</em>即赚钱</h1>
-  <p>精选各平台高佣金好物，每次有人通过你的链接购买，佣金自动到账。不需要库存，不需要客服。</p>
-</section>
-<div class="stats">
-  <div class="stat"><div class="stat-num">18%</div><div class="stat-label">德芙佣金比例</div></div>
-  <div class="stat"><div class="stat-num">¥5.48</div><div class="stat-label">每单预估收益</div></div>
-  <div class="stat"><div class="stat-num">¥0</div><div class="stat-label">启动成本</div></div>
-  <div class="stat"><div class="stat-num">24h</div><div class="stat-label">全天自动计佣</div></div>
+  <span style="font-size:.65rem;color:var(--green);border:1px solid rgba(0,230,118,.3);padding:.25rem .7rem;border-radius:999px;">💰 联盟营销站</span>
 </div>
-<div class="grid">
-  <div class="card">
-    <div class="card-top"><div class="card-icon">🍫</div><span class="card-commission">佣金 18%</span></div>
-    <h3>德芙巧克力桶装270g</h3>
-    <p>好评率99%，母亲节送礼首选！到手价¥24.89，性价比超高，冲动消费转化率极高。</p>
-    <div class="card-footer"><span class="card-platform">平台：京东自营</span><a class="card-btn" href="https://u.jd.com/f6eoEms" target="_blank">立即购买 →</a></div>
-  </div>
-  <div class="card">
-    <div class="card-top"><div class="card-icon">🛒</div><span class="card-commission">佣金 5-10%</span></div>
-    <h3>京东好物精选</h3>
-    <p>覆盖全品类，推广门槛低，实物商品种类丰富，适合生活方式类内容创作者导流。</p>
-    <div class="card-footer"><span class="card-platform">平台：京东联盟</span><a class="card-btn" href="https://u.jd.com/f6eoEms" target="_blank">获取链接 →</a></div>
-  </div>
-  <div class="card">
-    <div class="card-top"><div class="card-icon">🎁</div><span class="card-commission">佣金 18%</span></div>
-    <h3>母亲节礼物推荐</h3>
-    <p>5月母亲节送礼季，零食礼盒需求大爆发，现在推广正当时，转化率全年最高！</p>
-    <div class="card-footer"><span class="card-platform">平台：京东自营</span><a class="card-btn" href="https://u.jd.com/f6eoEms" target="_blank">立即购买 →</a></div>
-  </div>
+<div class="hero">
+  <h1>母亲节好物<br/><em>推荐</em>来了</h1>
+  <p>精选高性价比好物，每次有人通过链接购买，佣金自动到账。</p>
 </div>
+
+<div class="commission">
+  <div class="commission-item"><div class="commission-num">18%</div><div class="commission-label">佣金比例</div></div>
+  <div class="commission-item"><div class="commission-num">¥5.48</div><div class="commission-label">每单收益</div></div>
+  <div class="commission-item"><div class="commission-num">99%</div><div class="commission-label">好评率</div></div>
+  <div class="commission-item"><div class="commission-num">¥0</div><div class="commission-label">启动成本</div></div>
+</div>
+
+<div class="card">
+  <span class="card-tag">🔥 爆款推荐 · 佣金18%</span>
+  <h2>德芙巧克力桶装270g</h2>
+  <p>60颗德芙桶装，母亲节送礼必备！好评率99%，日期新鲜，物流很快，性价比超高，京东自营品质保障。</p>
+  <div class="price">
+    <span class="old">¥59.89</span>
+    <span class="new">¥24.89</span>
+  </div>
+  <a class="btn" href="https://u.jd.com/f6eoEms" target="_blank">👉 立即购买 · 享优惠</a>
+</div>
+
 <div class="guide">
-  <h2>📖 怎么用这个网站赚钱？</h2>
-  <div class="steps">
-    <div class="step"><div class="step-num">01</div><h4>分享网站链接</h4><p>把这个网站链接发到小红书、闲鱼、朋友圈，吸引朋友点进来看。</p></div>
-    <div class="step"><div class="step-num">02</div><h4>朋友点击购买</h4><p>朋友点击商品按钮，跳转到京东购买，全程自动记录到你的账户。</p></div>
-    <div class="step"><div class="step-num">03</div><h4>佣金自动到账</h4><p>每笔成功订单，京东联盟自动结算佣金，满¥50可提现到银行卡。</p></div>
-    <div class="step"><div class="step-num">04</div><h4>持续积累收入</h4><p>链接永久有效，发出去的内容持续带单，真正的被动收入！</p></div>
-  </div>
+  <h3>📖 怎么赚佣金？</h3>
+  <div class="step"><div class="step-num">1</div><p>把这个网页链接发到小红书、朋友圈、微信群</p></div>
+  <div class="step"><div class="step-num">2</div><p>朋友点进来，点「立即购买」跳转京东下单</p></div>
+  <div class="step"><div class="step-num">3</div><p>每笔订单自动计入你的京东联盟账户</p></div>
+  <div class="step"><div class="step-num">4</div><p>满¥50提现到银行卡，被动收入持续到账</p></div>
 </div>
-<footer>
-  <p>© 2026 好物导航 · 联盟营销站</p>
-  <p>⚠️ 本站链接含联盟追踪参数，实际收入因流量来源而有所不同。</p>
-</footer>
+
+<footer>© 2026 好物导航 · 本站链接含联盟追踪参数</footer>
 </body>
 </html>
